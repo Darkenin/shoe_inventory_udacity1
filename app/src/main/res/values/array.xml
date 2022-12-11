@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner">
+        <item>@string/sizea</item>
+        <item>@string/sizeb</item>
+        <item>@string/sizec</item>
+        <item>@string/sized</item>
+    </string-array>
+</resources>

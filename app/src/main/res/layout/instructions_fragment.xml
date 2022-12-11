@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment/InstructionsFragment">
+
+    <data>
+    <variable
+        name="viewModel"
+        type="com.raphael.shoe_inventory_udacity.viewmodel.ShoeListViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="66dp"
+            android:layout_height="63dp"
+            android:layout_marginBottom="312dp"
+            android:contentDescription="@string/arrow"
+            android:src="@drawable/arrow"
+            app:layout_constraintBottom_toTopOf="@+id/next_nav"
+            app:layout_constraintEnd_toStartOf="@+id/des_text"
+            app:layout_constraintHorizontal_bias="0.611"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/des_text"
+            android:layout_width="262dp"
+            android:layout_height="222dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/shoe_inv"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.104" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="152dp"
+            android:layout_marginBottom="120dp"
+            android:src="@drawable/inv_arrow"
+            android:contentDescription="@string/arrow"
+            app:layout_constraintBottom_toTopOf="@+id/next_nav"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/arrow"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/next_nav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="104dp"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

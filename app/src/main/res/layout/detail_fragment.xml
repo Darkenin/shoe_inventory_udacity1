@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment/DetailFragment">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.raphael.shoe_inventory_udacity.viewmodel.ShoeListViewModel" />
+    </data>
+
+   <!--  The use of ConstraintLayout allows you to create large and complex layouts with
+    a flat view hierarchy (no nested view groups).-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/shoe_image"
+            android:layout_width="266dp"
+            android:layout_height="163dp"
+            android:src="@drawable/udacity"
+            android:contentDescription="@string/imagedes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/manufacturer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/manufacturer"
+            app:layout_constraintBaseline_toBaselineOf="@+id/manufacturer_text"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Enter the shoe manufacturer -->
+        <EditText
+            android:id="@+id/manufacturer_text"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="32dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/manufacturer"
+            android:inputType="textMultiLine"
+            android:text="@={viewmodel._shoeCompany}"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/manufacturer"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_image"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <!-- Enter the shoe description -->
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="345dp"
+            android:layout_height="187dp"
+            android:layout_marginTop="80dp"
+            android:autofillHints=""
+            android:background="@drawable/rounded"
+            android:ems="10"
+            android:hint="@string/des"
+            android:inputType="textMultiLine"
+            android:text="@={viewmodel._shoeDescription}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_text" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:text="@string/shoe_name"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/name_text"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Enter the shoe name -->
+        <EditText
+            android:id="@+id/name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/shoe_name"
+            android:text="@={viewmodel._shoeName}"
+            android:inputType="textMultiLine"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/manufacturer_text"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <!-- returns you back to listing fragment  -->
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            app:layout_constraintBaseline_toBaselineOf="@+id/save"
+            app:layout_constraintEnd_toStartOf="@+id/save"
+            app:layout_constraintHorizontal_bias="0.689"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!--   click to save the shoe details     -->
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cancel"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

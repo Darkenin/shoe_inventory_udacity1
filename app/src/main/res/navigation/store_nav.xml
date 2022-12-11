@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/store_nav"
+    app:startDestination="@id/loginFragment2">
+
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.raphael.shoe_inventory_udacity.fragment.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/login_page">
+        <action
+            android:id="@+id/action_loginFragment2_to_instructionsFragment2"
+            app:destination="@id/instructionsFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionsFragment2"
+        android:name="com.raphael.shoe_inventory_udacity.fragment.InstructionsFragment"
+        android:label="Instructions"
+        tools:layout="@layout/instructions_fragment">
+        <action
+            android:id="@+id/action_instructionsFragment2_to_overviewFragment23"
+            app:destination="@id/overviewFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/overviewFragment2"
+        android:name="com.raphael.shoe_inventory_udacity.fragment.OverviewFragment"
+        android:label="Overview"
+        tools:layout="@layout/overview_fragment">
+        <action
+            android:id="@+id/action_overviewFragment2_to_listingFragment"
+            app:destination="@id/listingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/loginFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/listingFragment"
+        android:name="com.raphael.shoe_inventory_udacity.fragment.ListingFragment"
+        android:label="ListingFragment"
+        tools:layout="@layout/listing_fragment">
+        <action
+            android:id="@+id/action_listingFragment_to_detailFragment3"
+            app:destination="@id/detailFragment3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/detailFragment3" />
+        <action
+            android:id="@+id/action_listingFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <argument
+            android:name="shoeName"
+            app:argType="string" />
+        <argument
+            android:name="shoeCompany"
+            app:argType="string" />
+        <argument
+            android:name="shoeDescription"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment3"
+        android:name="com.raphael.shoe_inventory_udacity.fragment.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/detail_fragment">
+        <action
+            android:id="@+id/action_detailFragment3_to_listingFragment"
+            app:destination="@id/listingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/listingFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+</navigation>

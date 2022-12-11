@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="first">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">sans-serif-black</item>
+    </style>
+    <style name="second">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>false
+        <item name="textAllCaps">false</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#CEE2EC</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
